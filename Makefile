@@ -35,8 +35,8 @@ $(NAME)	: $(OBJ)
 	cp libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJ)
 
-$(OBJ)	: $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
+%.o	: %.c
+	$(CC) $(CFLAGS) $<
 
 clean	:
 	rm -f $(OBJ)

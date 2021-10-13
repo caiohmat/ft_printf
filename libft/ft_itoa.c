@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_convert(int n, int len, char *ptr)
+static char	*ft_convert(int	n, int	len, char	*ptr)
 {
 	ptr[len] = '\0';
 	len--;
@@ -38,7 +38,7 @@ static char	*ft_convert(int n, int len, char *ptr)
 	return (ptr);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int	n)
 {
 	char	*ptr;	
 	int		len;
@@ -54,9 +54,9 @@ char	*ft_itoa(int n)
 		len++;
 	}
 	ptr = malloc(len + 1);
-	ft_bzero(ptr, len + 1);
 	if (ptr == NULL)
 		return (NULL);
+	ft_bzero(ptr,len);
 	ptr = ft_convert(n, len, ptr);
 	return (ptr);
 }

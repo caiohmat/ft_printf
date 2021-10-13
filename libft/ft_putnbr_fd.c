@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_convert(int n, int len, char *ptr)
+static char	*ft_convert(int	n, int	len, char	*ptr)
 {
 	ptr[len] = '\0';
 	len--;
@@ -38,7 +38,7 @@ static char	*ft_convert(int n, int len, char *ptr)
 	return (ptr);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int	n, int	fd)
 {
 	char	ptr[32];	
 	int		len;
@@ -53,6 +53,7 @@ void	ft_putnbr_fd(int n, int fd)
 		aux = aux / 10;
 		len++;
 	}
+	ft_bzero(ptr, len);
 	ft_convert(n, len, ptr);
 	ft_putstr_fd(ptr, fd);
 }
